@@ -1,0 +1,7 @@
+%h1 Signup
+- semantic_form_for @user do |f|
+  != f.error_messages
+  != f.input :email
+  != f.input :password
+  != f.input :full_name
+  != f.commit_button "Register"

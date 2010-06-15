@@ -1,0 +1,7 @@
+%p New Idea
+
+- semantic_form_for @idea do |f|
+  != f.error_messages
+  != f.input :title
+  != f.input :description
+  != f.commit_button "Create"

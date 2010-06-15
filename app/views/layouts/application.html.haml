@@ -1,0 +1,26 @@
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %body
+    #header
+      %p
+        - if logged_in?
+          Hello
+          != link_to h(current_user.full_name), current_user
+        - else
+          != link_to "login", login_path
+          != link_to "signup", signup_path
+
+      %ul
+        %li!= link_to :home, "/"
+        %li!= link_to :users, users_path
+
+      #messages
+        - [:notice, :warning, :error].each do |reason|
+          - if flash[reason]
+            = reason.to_s.humanize
+            \:
+            = flash[reason]
+
+    #content
+      != yield
+

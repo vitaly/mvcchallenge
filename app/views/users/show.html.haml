@@ -1,0 +1,9 @@
+%h1 User profile
+
+%p
+  Name:
+  = @user.full_name
+
+%ul
+  %li!= link_to :ideas, user_ideas_path(@user)
+

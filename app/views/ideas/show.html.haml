@@ -1,0 +1,23 @@
+%h1 Idea
+
+%p= @idea.title
+%p= @idea.description
+
+Comments
+%ul
+  - @idea.comments.each do |c|
+    %li
+      = c.comment
+      by
+      != link_to h(c.user.full_name), c.user
+
+
+
+
+- semantic_form_for [@idea, @comment] do |f|
+  != f.input :comment, :as => :string
+  != f.commit_button "Add comment"
+
+- semantic_form_for [@idea, @rating] do |f|
+  != f.input :rating
+  != f.commit_button "Add rating"

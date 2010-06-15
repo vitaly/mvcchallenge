@@ -1,0 +1,6 @@
+%p
+  != link_to :new, new_idea_path
+%ul
+  - collection.each do |item|
+    %li!= link_to h(item.title), item
+

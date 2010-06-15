@@ -13,7 +13,9 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-
+  config.gem 'ruby-debug'
+  config.gem 'formtastic', :version => '0.9.8'
+  config.gem 'haml', :version => '3.0.12'
   config.gem 'has_scope', :version => '0.5.0'
   config.gem 'responders', :version => '0.4.6'
   config.gem 'inherited_resources', :version => '1.0.6'

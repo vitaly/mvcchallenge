@@ -1,6 +1,4 @@
 class UserSessionsController < ApplicationController
-  def new
-  end
 
   def create
     if user = User.authenticate(params[:user_session][:email], params[:user_session][:password])

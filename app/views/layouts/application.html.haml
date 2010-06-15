@@ -6,12 +6,16 @@
         - if logged_in?
           Hello
           != link_to h(current_user.full_name), current_user
+          (
+          != link_to :logout, logout_path
+          )
         - else
           != link_to "login", login_path
           != link_to "signup", signup_path
 
       %ul
         %li!= link_to :home, "/"
+        %li!= link_to :ideas, ideas_path
         %li!= link_to :users, users_path
 
       #messages

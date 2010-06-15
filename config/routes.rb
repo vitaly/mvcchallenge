@@ -12,5 +12,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect "/login", :controller => :user_sessions, :action => :create, :conditions => {:method => :post}
   map.login "/login", :controller => :user_sessions, :action => :new
+  map.logout "/logout", :controller => :user_sessions, :action => :destroy
   map.signup "/signup", :controller => :users, :action => :new
 end
